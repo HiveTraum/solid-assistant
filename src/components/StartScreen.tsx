@@ -50,7 +50,7 @@ export function StartScreen({ totalQuestions, onStart, onChecklist }: StartScree
           </button>
         </div>
         <div className="start-card" onClick={onChecklist}>
-          <span className="start-card-icon">&check;</span>
+          <span className="start-card-icon">&#10003;</span>
           <h3>Чеклист слоёв</h3>
           <p>Use Case, Adapter, Infrastructure — определи слой по признакам</p>
         </div>
