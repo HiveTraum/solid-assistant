@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { questions } from './data/questions';
 import type { Question } from './data/questions';
 import { LangProvider } from './context/LangContext';
