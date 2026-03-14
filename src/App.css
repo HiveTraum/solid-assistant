@@ -1,0 +1,616 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 48px);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+.lang-switcher {
+  display: flex;
+  gap: 4px;
+  background: var(--border);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.lang-btn {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.lang-btn:hover {
+  color: var(--text-h);
+}
+
+.lang-btn.active {
+  background: var(--card-bg);
+  color: var(--text-h);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Start Screen */
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 16px;
+  text-align: center;
+}
+
+.start-screen .subtitle {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.start-screen .description {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.principles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+/* Start Actions */
+.start-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 480px;
+  margin-top: 8px;
+}
+
+.start-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 16px;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.start-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  transform: translateY(-2px);
+}
+
+.start-card-icon {
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.start-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.start-card p {
+  font-size: 0.8rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.quiz-card {
+  cursor: default;
+}
+
+.quiz-card:hover {
+  transform: none;
+  border-color: var(--border);
+  background: var(--card-bg);
+}
+
+.count-selector {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.count-btn {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.count-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.count-btn.active {
+  background: var(--accent-bg);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.btn-start {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .start-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Quiz Screen */
+.quiz-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.principle-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.question-text {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  text-align: left;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--card-bg);
+  color: var(--text-h);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option:hover {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.option.correct {
+  border-color: var(--correct-border);
+  background: var(--correct-bg);
+  color: var(--correct);
+  cursor: default;
+}
+
+.option.wrong {
+  border-color: var(--wrong-border);
+  background: var(--wrong-bg);
+  color: var(--wrong);
+  cursor: default;
+}
+
+.option.correct:hover,
+.option.wrong:hover {
+  transform: none;
+}
+
+.explanation {
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.explanation.correct {
+  background: var(--correct-bg);
+  color: var(--correct);
+}
+
+.explanation.wrong {
+  background: var(--wrong-bg);
+  color: var(--wrong);
+}
+
+/* Code Block */
+.code-block {
+  margin-top: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1e1e2e;
+}
+
+.code-tabs {
+  display: flex;
+  gap: 0;
+}
+
+.code-tab {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  background: #2a2a3c;
+  color: #9ca3af;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.code-tab:hover {
+  background: #33334a;
+}
+
+.code-tab.active.bad {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.code-tab.active.good {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.code-content {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  text-align: left;
+}
+
+.code-content code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Result Screen */
+.result-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 12px;
+  text-align: center;
+}
+
+.result-score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.score-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.score-divider {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.score-total {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.result-percentage {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.result-message {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+/* Checklist Screen */
+.checklist-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn-back {
+  align-self: flex-start;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-back:hover {
+  opacity: 0.7;
+}
+
+.checklist-screen h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.checklist-subtitle {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.checklist-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist-category {
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--card-bg);
+  transition: border-color 0.2s;
+}
+
+.checklist-category.expanded {
+  border-color: var(--border);
+}
+
+.category-header {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--sans);
+}
+
+.category-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+  flex: 1;
+}
+
+.category-count {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: var(--mono);
+}
+
+.category-chevron {
+  font-size: 0.8rem;
+  color: var(--text);
+  transition: transform 0.2s;
+}
+
+.category-chevron.open {
+  transform: rotate(180deg);
+}
+
+.category-progress-bar {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.category-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.category-body {
+  padding: 0 20px 20px;
+}
+
+.category-description {
+  font-size: 0.85rem;
+  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.checklist-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.checklist-item {
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.checklist-item:hover {
+  background: var(--accent-bg);
+}
+
+.checklist-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checklist-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  margin-top: 1px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.checklist-checkbox:checked + .checkmark {
+  background: var(--cat-color);
+  border-color: var(--cat-color);
+}
+
+.checklist-checkbox:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checklist-text {
+  font-size: 0.9rem;
+  color: var(--text-h);
+  line-height: 1.4;
+  transition: all 0.2s;
+}
+
+.checklist-text.done {
+  color: var(--text);
+}
+
+.checklist-hint {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--accent-bg);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.checklist-hint strong {
+  font-weight: 600;
+}
